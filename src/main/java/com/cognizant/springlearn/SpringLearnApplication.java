@@ -21,8 +21,7 @@ public class SpringLearnApplication {
 		SpringApplication.run(SpringLearnApplication.class, args);
 //		displayDate();
 //		displayCountry();
-		displayCountries();
-	}
+ 	}
 
 	private static void displayCountries() {
 		LOGGER.info("START");
