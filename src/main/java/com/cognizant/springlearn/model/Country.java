@@ -1,4 +1,4 @@
-package com.cognizant.springlearn;
+package com.cognizant.springlearn.model;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

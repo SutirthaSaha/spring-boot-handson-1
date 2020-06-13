@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.cognizant.springlearn.Country;
 import com.cognizant.springlearn.SpringLearnApplication;
+import com.cognizant.springlearn.model.Country;
 import com.cognizant.springlearn.service.CountryService;
 import com.cognizant.springlearn.service.exception.CountryNotFoundException;
 

@@ -21,9 +21,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.util.Assert;
 
-import com.cognizant.springlearn.Country;
 import com.cognizant.springlearn.SpringLearnApplication;
 import com.cognizant.springlearn.controller.CountryController;
+import com.cognizant.springlearn.model.Country;
 
 @SpringBootTest(classes=SpringLearnApplication.class)
 @AutoConfigureMockMvc
@@ -107,5 +107,19 @@ class SpringLearnApplicationTests {
 		ResultActions actions=mockMvc.perform(delete("/countries/ina"));
 		actions.andExpect(status().isNotFound());
 		actions.andExpect(status().reason("Country not found"));
+	}
+	@Test
+	public void testDeleteEmployee() throws Exception{
+		ResultActions actions=mockMvc.perform(delete("/employees/101"));
+		actions.andExpect(status().isOk());
+		actions.andExpect(jsonPath("$.id").exists());
+		actions.andExpect(jsonPath("$.id").value("101"));
+	}
+	
+	@Test
+	public void testDeleteEmployeeException() throws Exception {
+		ResultActions actions=mockMvc.perform(delete("/employees/10"));
+		actions.andExpect(status().isNotFound());
+		actions.andExpect(status().reason("Employee not found"));
 	}
 }
