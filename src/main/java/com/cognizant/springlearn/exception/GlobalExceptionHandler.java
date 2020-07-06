@@ -1,4 +1,4 @@
-package com.cognizant.springlearn;
+package com.cognizant.springlearn.exception;
 
 import java.util.Date;
 import java.util.LinkedHashMap;
